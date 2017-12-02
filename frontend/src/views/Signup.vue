@@ -17,6 +17,7 @@
     import FormMixin from '../mixins/Form'
     export default {
         mixins: [FormMixin],
+        endpoint: 'users/',
         data: () => ({
             form: {
                 full_name: '',
@@ -45,7 +46,12 @@
             signup() {
                 this.is_valid().then(response => {
                     if (response){
-                        console.log(this.form)
+                        axios.post(this.$options.endpoint, this.form)
+                            .then(response => {
+                                console.log(response);
+                            }).catch(error => {
+                                console.log(error)
+                            })
                     }
                 })
             }

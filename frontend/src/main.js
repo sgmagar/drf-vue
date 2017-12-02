@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VeeValidate from 'vee-validate'
 
 import './styles/main.scss'
+import './config'
+
 import App from './App.vue'
 import router from './routes'
 
