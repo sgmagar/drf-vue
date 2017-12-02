@@ -5,8 +5,6 @@ import Home        from './views/Home.vue'
 import Signup        from './views/Signup.vue'
 import Login        from './views/Login.vue'
 
-
-
 Vue.use(VueRouter)
 
 const routes = [
