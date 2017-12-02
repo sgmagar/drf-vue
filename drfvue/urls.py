@@ -20,6 +20,6 @@ from users import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # url(r'^api/', include('users.api.urls')),
+    url(r'^api/', include('users.api.urls')),
     url(r'^.*$', views.index, name='home'),
 ]
