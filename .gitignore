@@ -3,3 +3,5 @@ db.sqlite3
 .idea/
 media_root
 static_root
+
+node_modules/
