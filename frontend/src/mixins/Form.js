@@ -5,12 +5,17 @@ export default {
     data: () => ({}),
     methods: {
         is_valid (ref='') {
-            if (!ref) {
-                this.$refs.child.$validator.validateAll()
-                return !this.$refs.child.errors.items.length
-            }
-            this.$refs[ref].$validator.validateAll()
-            return !this.$refs[ref].errors.items.length
+            return new Promise((resolve, reject) => {
+                if (!ref) {
+                    this.$refs.child.$validator.validateAll().then(response => {
+                        resolve(response)
+                    })
+                } else{
+                    this.$refs[ref].$validator.validateAll().then(response => {
+                        resolve(response)
+                    })
+                }
+            })
         },
         clear (ref='') {
             if (!ref) {
