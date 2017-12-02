@@ -25,11 +25,11 @@ class UserViewSet(viewsets.ModelViewSet):
     def login(self, request):
         data = request.data
         required_fields = {
-            'phone': 'Phone Number',
+            'email': 'Email',
             'password': 'Password',
         }
         check_required_fields(data, required_fields)
-        user = authenticate(phone=data.get('phone'), password=data.get('password'))
+        user = authenticate(email=data.get('email'), password=data.get('password'))
         if user:
             login(request, user)
             return Response(user.data)
